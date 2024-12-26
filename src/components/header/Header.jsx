@@ -43,7 +43,7 @@ function Header() {
               <Logo width='70px' />
             </Link>
           </div>
-          <ul className='flex ml-auto font-sans'>
+          <ul className='flex ml-auto'>
             {navItems.map((item) =>
               item.active ? (
                 <li key={item.name}>

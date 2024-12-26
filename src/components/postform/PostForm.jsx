@@ -13,6 +13,7 @@ function PostForm({ post }) {
          slug: post?.slug || '',
          content: post?.content || '',
          status: post?.status || 'Active'
+
       },
    })
 
