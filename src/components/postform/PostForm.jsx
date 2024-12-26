@@ -32,7 +32,7 @@ function PostForm({ post }) {
          })
 
          if (dbPost) {
-            navigate(`/posts/${dbPost.$id}`)
+            navigate(`/post/${dbPost.$id}`)
          }
       } else {
          const file = await AppwriteService.uploadFile(data.image[0])
@@ -62,7 +62,7 @@ function PostForm({ post }) {
 
    useEffect(() => {
       const subscription = watch((value, { name }) => {
-         if (name === 'slug') {
+         if (name === 'title') {
             setValue('slug', slugTransform(value.title, { shouldValidate: true }))
          }
       })
