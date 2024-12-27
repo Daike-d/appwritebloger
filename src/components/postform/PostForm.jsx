@@ -13,7 +13,6 @@ function PostForm({ post }) {
          slug: post?.slug || '',
          content: post?.content || '',
          status: post?.status || 'Active'
-
       },
    })
 
@@ -32,7 +31,7 @@ function PostForm({ post }) {
          })
 
          if (dbPost) {
-            navigate(`/post/${dbPost.$id}`)
+            navigate(`/all-posts`)
          }
       } else {
          const file = await AppwriteService.uploadFile(data.image[0])
@@ -62,7 +61,7 @@ function PostForm({ post }) {
 
    useEffect(() => {
       const subscription = watch((value, { name }) => {
-         if (name === 'title') {
+         if (name === 'slug') {
             setValue('slug', slugTransform(value.title, { shouldValidate: true }))
          }
       })
